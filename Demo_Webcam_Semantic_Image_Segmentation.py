@@ -13,12 +13,6 @@ from PIL import Image
 
 import tensorflow as tf
 
-# This is needed since all the main TF codes are stored in the object_detection folder.
-# sys.path.append("/home/mahdi/Tensorflow-1.5/tensorflow/models/research/object_detection/")
-sys.path.append("C:/tensorflow1/models/research/deeplab/")
-# sys.path.append("/home/mahdi/Tensorflow-1.5/tensorflow/models/research/")
-sys.path.append("C:/tensorflow1/models/research/")
-
 from object_detection.utils import ops as utils_ops
 
 if tf.__version__ < '1.4.0':
@@ -231,7 +225,6 @@ while(True):
 	seg_image = run_visualization(image_np)
 
 	cv2.imshow('frame1',cv2.resize(seg_image, (800,600)))
-	cv2.imshow('frame2',cv2.resize(seg_image, (800,600)))
 	# You can exit by pressing q
 	if cv2.waitKey(25) & 0xFF == ord('q'):
 	  break
